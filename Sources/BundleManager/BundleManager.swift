@@ -2,7 +2,6 @@
 //  BundleManager.swift
 //  BundleManager
 //
-//  Created by Christian Seiler on 15.08.20.
 //  Copyright © 2020 Christian Seiler. All rights reserved.
 //
 
@@ -18,7 +17,7 @@ public class BundleManager {
 
     /// Creates a default BundleManager
     public static var `default` = BundleManager()
-    
+
     ///
     public init(bundle: Bundle = Bundle.main) {
         self.bundle = bundle
@@ -189,7 +188,9 @@ public class BundleManager {
         bundle.infoDictionary?[BundleIds.CFBundleHelpBookFolder.rawValue] as? String
     }
 
-    enum BundleIds: String {
+    // swiftlint:disable identifier_name
+    // swiftlint:disable explicit_enum_raw_value
+    private enum BundleIds: String {
         // MARK: Categorization
         /// The type of bundle.
         /// Name: Bundle OS Type code
@@ -270,6 +271,7 @@ public class BundleManager {
         /// The name of the folder containing the bundle’s help files.
         /// Name: Help Book directory name
         case CFBundleHelpBookFolder
-
+        // swiftlint:enable identifier_name
     }
+
 }
